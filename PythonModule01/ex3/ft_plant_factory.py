@@ -63,7 +63,6 @@ class Plant:
 def ft_plant_factory(plants_data:
                      list[tuple[str, float, int, float]]) -> list[Plant]:
     result: list[Plant] = []
-    print("=== Plant Factory Output ===")
     for data in plants_data:
         plant: Plant = Plant(*data)
         result.append(plant)
@@ -73,7 +72,7 @@ def ft_plant_factory(plants_data:
 
 
 if __name__ == "__main__":
-    print("=== Garden Plant Growth ===")
+    print("=== Plant Factory Output ===")
     plants_data: list[tuple[str, float, int, float]] = [
         ("Rose", 25, 30, 0.8),
         ("Sunflower", 80, 45, 0.5),
