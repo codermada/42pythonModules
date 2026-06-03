@@ -60,13 +60,23 @@ def ft_plant_growth(plants: list[Plant],
         plant.set_height_increase(0)
 
 
+def ft_plant_factory(plants_data:
+                     list[tuple[str, float, int, float]]) -> list[Plant]:
+    result: list[Plant] = []
+    for data in plants_data:
+        result.append(Plant(*data))
+    return result
+
+
 if __name__ == "__main__":
     print("=== Garden Plant Growth ===")
-    # plants: list[Plant] = [
-    #     Plant("Rose", 25, 30, 0.8),
-    #     Plant("Sunflower", 80, 45, 0.5),
-    #     Plant("Cactus", 15, 120, 0.6)]
-    plants: list[Plant] = [
-        Plant("Rose", 25, 30.1, 0.8)]
+    plants_data: list[tuple[str, float, int, float]] = [
+        ("Rose", 25, 30, 0.8),
+        ("Sunflower", 80, 45, 0.5),
+        ("Cactus", 15, 120, 0.6),
+        ("Tulip", 35, 20, 0.7),
+        ("Bamboo", 150, 365, 1.2)
+    ]
+    plants: list[Plant] = ft_plant_factory(plants_data)
     ft_plant_growth(plants, 7, "Growth this week")
     print("=== End of Program ===")
