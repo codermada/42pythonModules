@@ -47,24 +47,28 @@ class Plant:
         self.__height_increase = height_increase
 
 
-def ft_plant_growth(plants: list[Plant],
-                    days: int,
-                    height_increase_label: str) -> None:
-    for plant in plants:
-        plant.show()
-        for i in range(days):
-            print(f"=== Day {i + 1} ===")
-            plant.age(1)
-            plant.show()
-        print(f"{height_increase_label}: {plant.get_height_increase()}cm")
-        plant.set_height_increase(0)
+# def ft_plant_growth(plants: list[Plant],
+#                     days: int,
+#                     height_increase_label: str) -> None:
+#     for plant in plants:
+#         plant.show()
+#         for i in range(days):
+#             print(f"=== Day {i + 1} ===")
+#             plant.age(1)
+#             plant.show()
+#         print(f"{height_increase_label}: {plant.get_height_increase()}cm")
+#         plant.set_height_increase(0)
 
 
 def ft_plant_factory(plants_data:
                      list[tuple[str, float, int, float]]) -> list[Plant]:
     result: list[Plant] = []
+    print("=== Plant Factory Output ===")
     for data in plants_data:
-        result.append(Plant(*data))
+        plant: Plant = Plant(*data)
+        result.append(plant)
+        print("Created: ", end="")
+        plant.show()
     return result
 
 
@@ -78,5 +82,5 @@ if __name__ == "__main__":
         ("Bamboo", 150, 365, 1.2)
     ]
     plants: list[Plant] = ft_plant_factory(plants_data)
-    ft_plant_growth(plants, 7, "Growth this week")
+    # ft_plant_growth(plants, 7, "Growth this week")
     print("=== End of Program ===")
