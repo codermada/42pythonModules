@@ -19,7 +19,8 @@ class Plant:
 
     def age(self, days: int) -> None:
         for _ in range(days):
-            self.grow()
+            self._height = self._height + self._growth_rate
+            self._height_increase = self._height_increase + self._growth_rate
             self._age = self._age + 1
 
     def get_name(self) -> str:
