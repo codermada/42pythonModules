@@ -8,7 +8,7 @@ def input_temperature(temp_str: str) -> int:
         raise Exception(str(e))
 
 
-def first_exception() -> None:
+def ft_first_exception() -> None:
     inputs = ["25", "abc"]
     print()
     for data in inputs:
@@ -25,5 +25,5 @@ def first_exception() -> None:
 
 if __name__ == "__main__":
     print("=== Garden Temperature ===")
-    first_exception()
+    ft_first_exception()
     print("=== End of Program ===")
